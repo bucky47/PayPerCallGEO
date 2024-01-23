@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT&T Products & Services</title>
+
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Basic styles for body and header */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #007ACC;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Styles for product cards */
+        .product-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            transition: height 0.5s;
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .card a {
+            text-decoration: none;
+            background-color: #007ACC;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: block; /* Updated to display as block */
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .card a:hover {
+            background-color: #005FAB;
+        }
+
+        /* Add styles to toggle card details */
+        .card.show-details {
+            height: auto;
+            transition: height 0.5s;
+        }
+
+        .card.show-details .learn-more {
+            display: block; /* Ensure "Learn More" is visible */
+        }
+
+        .card .details {
+            display: none;
+        }
+
+        .card.show-details .details {
+            display: block;
+        }
+
+        /* Style the "Learn More" button */
+        .learn-more {
+            background-color: #007ACC;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .learn-more:hover {
+            background-color: #005FAB;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to AT&T</h1>
+        <p>Explore our range of products and services</p>
+    </header>
+    
+    <main>
+        <section class="product-cards">
+            <div class="card">
+                <img src="https://cdn.acn.com/images/2021/11/16/att_wrless_hz_rgb_pos.png" alt="Product 1">
+                <h2>AT&T Wireless</h2>
+                <p>Stay connected with AT&T's high-speed wireless network.</p>
+                <a href="#" class="learn-more">Learn More</a>
+                <div class="details">
+				<p>AT&amp;T Wireless offers a wide range of wireless plans, devices, and services designed to keep you connected wherever you go. Choose from the latest smartphones, tablets, and wearable devices and enjoy the benefits of our high-speed wireless network, which includes 5G technology in select areas. Whether you need unlimited data, international calling, or family plans, AT&amp;T Wireless has the right solution for you. For inquiries or assistance with your wireless plan, reach out to customer service at 1-800-331-0500.</p>
+                    </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4e83WcvIvK4GLqOm2QRor1Dy7GD0PHzoy5UutirSv2hZ9fqWBmeyxzsbfGp1jHhsKug&usqp=CAU" alt="Product 2">
+                <h2>AT&T Internet</h2>
+                <p>Get fast and reliable internet at home.</p>
+                <a href="#" class="learn-more">Learn More</a>
+                <div class="details">
+                    <p>AT&T Internet provides reliable high-speed internet services for your home. Experience seamless browsing, streaming, and online gaming with our fiber and DSL internet options. Explore a variety of plans to fit your needs, from basic connectivity to ultra-fast speeds. Our internet service comes with built-in security features to protect your online activities. If you have questions about your internet plan or need technical support, contact customer service at 1-800-288-2020.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/AT%26T_TV.svg/2560px-AT%26T_TV.svg.png" alt="Product 3">
+                <h2>AT&T TV</h2>
+                <p>Enjoy streaming and live TV with AT&T TV. </p>
+                <a href="#" class="learn-more">Learn More</a>
+                <div class="details">
+                    <p>AT&T TV revolutionizes your entertainment experience by combining live TV, on-demand content, and your favorite streaming apps in one place. Enjoy a wide selection of channels, including sports, news, and premium content. With features like cloud DVR and voice remote control, you'll have the flexibility to watch what you want, when you want. For information on AT&T TV packages, billing inquiries, or technical assistance, call customer service at 1-800-288-2020.</p>
+                </div>
+            </div>
+			<div class="card">
+                <img src="https://target.scene7.com/is/image/Target/GUEST_9cf0a2f3-4a8d-4949-9fb4-495323fc0c15?wid=668&qlt=80&fmt=pjpeg" alt="Product 4">
+                <h2>AT&T Home Phone</h2>
+                <p>Stay connected with AT&T Home Phone services.</p>
+                <a href="#" class="learn-more">Learn More</a>
+                <div class="details">
+                    <p>Stay connected with AT&T Home Phone services. Our home phone plans offer unlimited nationwide calling, advanced voicemail options, and convenient call forwarding features. Enjoy crystal-clear voice quality and reliable service. In case you encounter any issues or have questions about your home phone service, don't hesitate to contact customer service at 1-800-288-2020.</p>
+                </div>
+            </div>
+			<div class="card">
+                <img src="https://www.safehome.org/app/uploads/2018/04/ATT-Digital-Life.png" alt="Product 5">
+                <h2>AT&T Digital Life</h2>
+                <p>Secure your home with AT&T Digital Life.</p>
+                <a href="#" class="learn-more">Learn More</a>
+                <div class="details">
+                    <p>AT&T Digital Life provides comprehensive home security and automation solutions. Monitor your property, control smart devices, and receive real-time alerts from virtually anywhere. Our services include professionally monitored security systems, energy management, and home automation. For inquiries, installation assistance, or troubleshooting, reach out to customer service at 1-855-288-2727.</p>
+                </div>
+            </div>
+			<div class="card">
+                <img src="https://cdn.softwarereviews.com/production/logos/offering_score_snapshots/65707/original/ATT_Business_Logo.png?1674041408" alt="Product 6">
+                <h2>AT&T Business Services</h2>
+                <p>Explore AT&T's business solutions for enterprises.</p>
+                <a href="#" class="learn-more">Learn More</a>
+                <div class="details">
+                    <p>AT&T Business Services cater to the unique needs of enterprises. Our solutions include high-speed business internet, dedicated networking options, cloud services, unified communication tools, and cybersecurity solutions. We help businesses of all sizes stay competitive, efficient, and secure in a rapidly evolving digital landscape. To discuss your specific business requirements and customize a solution, call our business specialists at 1-888-944-0447.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 AT&T. All rights reserved.</p>
+    </footer>
+	 <script>
+        // Function to toggle card details on "Learn More" click
+        const learnMoreLinks = document.querySelectorAll('.learn-more');
+        learnMoreLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const card = this.parentElement;
+                card.classList.toggle('show-details');
+            });
+        });
+    </script>
+</body>
+</html>

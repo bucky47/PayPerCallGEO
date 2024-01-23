@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Roofing Calculator</title>
+    <style>
+        /* Add a Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7f6;
+            color: #333;
+            padding: 20px;
+        }
+
+        #calculator {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #102a43;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #102a43;
+        }
+
+        input[type=number] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            border: 1px solid #ced4da;
+        }
+
+        input[type=button] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #68b2a0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        input[type=button]:hover {
+            background-color: #5a9f8c;
+        }
+
+        #resultCard {
+            background: #e9f8f2;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        #result {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            #calculator {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <h2>Roofing Calculator</h2>
+        <form id="roofCalc">
+            <label for="baseArea">House Base Area (in square feet):</label>
+            <input type="number" id="baseArea" name="baseArea"><br>
+
+            <label for="roofPitch">Roof Pitch (in degrees):</label>
+            <input type="number" id="roofPitch" name="roofPitch"><br>
+
+            <label for="eaves">Eaves Stick Out (in feet):</label>
+            <input type="number" id="eaves" name="eaves"><br>
+
+            <label for="pricePerSqFt">Price per Square Foot ($):</label>
+            <input type="number" id="pricePerSqFt" name="pricePerSqFt" step="0.01"><br>
+
+            <input type="button" value="Calculate" onclick="calculateRoofingCost()">
+        </form>
+        
+        <div id="resultCard">
+            <div id="result"></div>
+            <div id="contactInfo">
+                <p style="text-align: center;"><strong>For specialized roofing services, call us at</strong>: <strong><span style="color: #0000ff;">822-545-1246</span></strong></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://d26tpo4cm8sb6k.cloudfront.net/img/roofing.png" alt="" /></p>
+            </div>
+        </div>
+		
+    </div>
+    <script>
+        function calculateRoofingCost() {
+            var baseArea = parseFloat(document.getElementById("baseArea").value);
+            var roofPitch = parseFloat(document.getElementById("roofPitch").value);
+            var eaves = parseFloat(document.getElementById("eaves").value);
+            var pricePerSqFt = parseFloat(document.getElementById("pricePerSqFt").value);
+
+            var slope = Math.tan(roofPitch * Math.PI / 180);
+            var adjustedArea = (baseArea + eaves * baseArea * Math.sqrt(2)) * Math.sqrt(1 + slope * slope);
+            var totalCost = adjustedArea * pricePerSqFt;
+
+            adjustedArea = adjustedArea.toFixed(2);
+            totalCost = totalCost.toFixed(2);
+
+            document.getElementById("result").innerHTML = "Estimated Roofing Area: " + adjustedArea + " square feet<br>Total Estimated Cost: $" + totalCost;
+        }
+    </script>
+</body>
+</html>
